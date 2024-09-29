@@ -15,7 +15,7 @@ const Home = () => {
 	return (
 		<div>
 			<Nav />
-			<h1>Home Page</h1>
+			<h1>Home Page v2</h1>
 			<button onClick={handleChange}>Change Users</button>
 			<Users triggerFetch={triggerFetch} />
 		</div>

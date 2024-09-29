@@ -10,13 +10,10 @@ const Users = (triggerFetch) => {
 		const fetchData = async () => {
 			setIsLoading(true);
 
-			const fetchedUsers = await fetch(usersEndpoint).then((res) => res.json());
+			const response = await fetch(usersEndpoint);
+			const data = await response.json();
 
-			const processedUsers = fetchedUsers.map((user) => {
-				return user.results[0];
-			});
-
-			setUsers(processedUsers);
+			setUsers(data);
 			setIsLoading(false);
 		};
 

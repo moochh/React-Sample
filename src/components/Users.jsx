@@ -4,7 +4,7 @@ const Users = (triggerFetch) => {
 	const [users, setUsers] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
 
-	const usersEndpoint = 'https://vercel-server-flax.vercel.app/users';
+	const usersEndpoint = 'https://vercel-server-flax.vercel.app/postgres';
 
 	useEffect(() => {
 		const fetchData = async () => {

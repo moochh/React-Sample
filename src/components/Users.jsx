@@ -4,7 +4,7 @@ const Users = (triggerFetch) => {
 	const [users, setUsers] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
 
-	const usersEndpoint = 'https://express-server-3w2m.onrender.com/users';
+	const usersEndpoint = 'https://vercel-server-flax.vercel.app/users';
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -28,9 +28,7 @@ const Users = (triggerFetch) => {
 
 			<ul>
 				{users.map((user, index) => (
-					<li key={user.id}>
-						{user.name.first} {user.name.last}
-					</li>
+					<li key={user.id}>{user.name}</li>
 				))}
 			</ul>
 		</div>

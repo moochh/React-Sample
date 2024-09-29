@@ -8,7 +8,6 @@ const Home = () => {
 	const [triggerFetch, setTriggerFetch] = useState(false);
 
 	const handleChange = () => {
-		// Change the state to trigger re-fetching
 		setTriggerFetch((prev) => !prev);
 	};
 

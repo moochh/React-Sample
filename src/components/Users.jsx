@@ -4,6 +4,9 @@ const Users = (triggerFetch) => {
 	const [users, setUsers] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
 
+	const myMessage = 'Hello World';
+	console.log(myMessage);
+
 	const usersEndpoint = 'https://express-server-3w2m.onrender.com/users';
 
 	useEffect(() => {

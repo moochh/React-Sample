@@ -5,6 +5,7 @@ const Image = () => {
 	const [imageId, setImageId] = useState('');
 	const [images, setImages] = useState([]);
 	const [imageURL, setImageURL] = useState('');
+	const [isLoading, setIsLoading] = useState(false);
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -20,6 +21,8 @@ const Image = () => {
 	}, []);
 
 	const fetchImage = async (imageId) => {
+		setIsLoading(true);
+
 		try {
 			const response = await fetch(
 				`https://vercel-server-flax.vercel.app/image/${imageId}`
@@ -35,6 +38,8 @@ const Image = () => {
 		} catch (error) {
 			setImageURL('');
 			console.error('Error fetching the image:', error);
+		} finally {
+			setIsLoading(false);
 		}
 	};
 
@@ -54,6 +59,7 @@ const Image = () => {
 				</div>
 
 				<div>
+					{isLoading && <p>Loading...</p>}
 					<img
 						src={imageURL}
 						style={{ maxWidth: '100%', maxHeight: '400px' }}

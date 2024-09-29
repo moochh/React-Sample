@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const Users = (triggerFetch) => {
 	const [users, setUsers] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
 
-	const usersEndpoint = 'https://vercel-server-flax.vercel.app/postgres';
-
 	useEffect(() => {
 		const fetchData = async () => {
 			setIsLoading(true);
 
-			const response = await fetch(usersEndpoint);
-			const data = await response.json();
+			const response = await axios.get('/users');
+			const data = response.data;
 
 			setUsers(data);
 			setIsLoading(false);

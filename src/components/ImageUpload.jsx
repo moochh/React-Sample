@@ -20,15 +20,11 @@ const ImageUpload = () => {
 		formData.append('image', selectedFile);
 
 		try {
-			const response = await axios.post(
-				'http://localhost:3000/upload',
-				formData,
-				{
-					headers: {
-						'Content-Type': 'multipart/form-data'
-					}
+			const response = await axios.post('/upload', formData, {
+				headers: {
+					'Content-Type': 'multipart/form-data'
 				}
-			);
+			});
 			setMessage(response.data.message);
 		} catch (error) {
 			console.error('Error uploading the image:', error);

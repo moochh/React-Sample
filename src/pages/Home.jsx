@@ -4,6 +4,7 @@ import CatFact from '../components/CatFact';
 import Nav from '../components/Nav';
 import Users from '../components/Users';
 import ImageUpload from '../components/ImageUpload';
+import axios from 'axios';
 
 const Home = () => {
 	const [triggerFetch, setTriggerFetch] = useState(false);

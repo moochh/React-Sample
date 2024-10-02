@@ -9,6 +9,26 @@ import axios from 'axios';
 const Home = () => {
 	const [triggerFetch, setTriggerFetch] = useState(false);
 
+	// const getFact = async () => {
+	// 	try {
+	// 		const response = await axios.get('/catfact');
+	// 		const data = response.data;
+	// 		console.log(data);
+	// 	} catch (error) {
+	// 		console.error('ERROR STATUS:', error.response.status);
+	// 	}
+	// };
+
+	const getFact = async () => {
+		try {
+			const response = await axios.get('/catfact');
+		} catch (error) {
+			console.error('ERROR STATUS:', error.response.status);
+		}
+	};
+
+	getFact();
+
 	const handleChange = () => {
 		setTriggerFetch((prev) => !prev);
 	};
